@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: 0, 0, 0;
+    --dark: 66, 66, 66;
+    --white: 255, 255, 255;
+    --gray: 101, 101, 101;
+    --blue: 0, 122, 255;
+    --bg: 240, 240, 240;
+    --size: 0.4rem;
+    --space: 0.4rem;
+    --current-color: currentColor;
+    --font-percentage: 62.5%;
+    --font-size: 1rem;
+    --font-family: Inter, sans-serif;
+    --radius: 0.4rem;
+}
+
+@font-face{
+    font-family: Inter;
+    font-weight: 400;
+    src: url('./assets/fonts/Inter-Regular.woff2') format('woff2');
+    font-style: normal;
+}
+
+@font-face{
+    font-family: Inter;
+    font-weight: 500;
+    src: url('./assets/fonts/Inter-Medium.woff2') format('woff');
+    font-style: normal;
+}
+
+@font-face{
+    font-family: Inter;
+    font-weight: 600;
+    src: url('./assets/fonts/Inter-SemiBold.woff2') format('woff');
+    font-style: normal;
+}
+
+html, button {
+    font-weight: 400;
+    font-family: var(--font-family);
+    font-size: var(--font-percentage);
+    letter-spacing: calc(var(--size) * -0.03);
+}
+
+main {
+    display: flex;
+    min-width: 100vw;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.note {
+    width: 100%;
+    padding: calc(var(--space) * 5);
+    max-width: calc(var(--size) * 100);
+}
+
+.note span {
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.9rem;
+    display: inline-block;
+    color: rgb(var(--gray));
+    font-size: calc(var(--font-size) * 1.2);
+}
+
+a {
+    text-decoration: none;
+    color: rgb(var(--blue));
+    text-underline-offset: 0.2rem;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    flex:  1 1 auto;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    padding: calc(var(--space) * 3);
+    max-width: calc(var(--size) * 40);
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+}
+
+.items {
+    top: 0rem;
+    z-index: -1;
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--space) * 3);
+    background-color: rgb(var(--bg));
+    padding: calc(var(--space) * 4);
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:calc(var(--space) * 4);
+}
+
+.item img {
+    object-fit: cover;
+    width: calc(var(--size) * 13);
+    height: calc(var(--size) * 12);
+    border-radius: calc(var(--radius) * 2.5);
+}
+
+.itemContent {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--space) * 2);
+}
+
+.itemName {
+    font-weight: 400;
+    font-size: calc(var(--font-size) * 1.6);
+}
+
+.itemAmount {
+    font-weight: 500;
+    color: rgb(var(--gray));
+    margin-left: calc(var(--space) * 2);
+    font-size: calc(var(--font-size) * 1.3);
+}
+
+.itemPrice {
+    font-weight: 500;
+    color: rgb(var(--gray));
+    font-size: calc(var(--font-size) * 1.4);
+}
+
+.btn {  
+    z-index: 0;
+    display: inline-flex;
+    align-items: center;
+    color: rgba(var(--white));
+    gap: calc(var(--space) * 2);
+    border: 1px solid rgba(var(--black));
+    background-color: rgba(var(--black));
+    border-radius: calc(var(--radius) * 3);
+    font-size: calc(var(--font-size) * 1.6);
+    padding: calc(var(--space) * 3) calc(var(--space) * 4);
+    transition: all 0.2s ease-in-out;
+} 
+
+.btn:hover {
+    border-color: rgb(var(--dark));
+    background-color: rgb(var(--dark));
+}
+
+.btnIcon {
+    display: flex;
+    position: relative;
+    background-color: inherit;
+}
+
+.btnIcon svg {
+    width: calc(var(--size) * 5);
+    height: calc(var(--size) * 5);
+    transition: fill 0.2s ease-in-out;
+}
+
+.btnIcon span {
+    right: -0.3rem;
+    top: -0.3rem;
+    display: flex;
+    font-weight: 600;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: calc(var(--size) * 3);
+    height: calc(var(--size) * 3);
+    font-size: calc(var(--font-size) * 1);
+    border-radius: calc(var(--radius) * 99);
+    background-color: inherit;
+}
