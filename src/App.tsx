@@ -31,9 +31,18 @@ function App() {
         alt: 'tunao-sofas-taeillo',
       },
       amount: 1,
-      price: 125.8,
+      price: 125.82,
     },
   ];
+
+  const splitPrice = (price: number): string[] => {
+    const inStr = String(price);
+    const splitStr = inStr.split('.');
+    const realNumber = splitStr[0];
+    const floatNumber = splitStr[1];
+
+    return [realNumber, floatNumber];
+  };
 
   return (
     <main className={Styles.mains}>
@@ -73,9 +82,11 @@ function App() {
                               x{product.amount}
                             </span>
                           </h3>
-                          <span className={Styles.itemPrice}>
-                            {product.price} USD
-                          </span>
+                          <p className={Styles.itemPrice}>
+                            <span>{splitPrice(product.price)[0]}</span>.
+                            <span>{splitPrice(product.price)[1]}</span>
+                            <span> USD</span>
+                          </p>
                         </motion.div>
 
                         <motion.img
@@ -142,6 +153,7 @@ function App() {
           <a
             href='https://taeillo.com/'
             target='_blank'
+            rel='noreferrer'
           >
             Taeillo
           </a>{' '}
