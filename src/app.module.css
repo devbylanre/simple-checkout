@@ -123,9 +123,9 @@ a:hover{
 
 .item img {
     object-fit: cover;
-    width: calc(var(--size) * 13);
+    width: calc(var(--size) * 12);
     height: calc(var(--size) * 12);
-    border-radius: calc(var(--radius) * 2.5);
+    border-radius: calc(var(--radius) * 999);
 }
 
 .itemContent {
@@ -148,8 +148,16 @@ a:hover{
 
 .itemPrice {
     font-weight: 500;
-    color: rgb(var(--gray));
-    font-size: calc(var(--font-size) * 1.4);
+    color: rgb(var(--black));
+    font-size: calc(var(--font-size) * 1.3);
+}
+
+.itemPrice span:nth-child(1) {
+    font-size: calc(var(--font-size) * 1.7);
+}
+
+.itemPrice span:nth-child(3) {
+    font-size: calc(var(--font-size) * 1);
 }
 
 .btn {  
